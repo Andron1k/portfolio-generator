@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Генератор портфоліо дитини</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page">
+    <header class="hero">
+      <div class="hero__badge">Junior IT • portfolio page generator</div>
+      <h1>Генератор портфоліо дитини</h1>
+      <p class="hero__text">
+        Заповніть кілька полів — і отримайте повноцінну сторінку портфоліо:
+        з хедером, меню, головним блоком, секціями про дитину, інтересами,
+        навичками, мрією та футером.
+      </p>
+    </header>
+
+    <main class="layout">
+      <section class="card form-card">
+        <h2>Заповніть інформацію</h2>
+
+        <div class="form-grid">
+          <div class="field">
+            <label for="name">Ім’я дитини</label>
+            <input type="text" id="name" placeholder="Наприклад: Софія">
+          </div>
+
+          <div class="field">
+            <label for="age">Вік</label>
+            <input type="text" id="age" placeholder="Наприклад: 10">
+          </div>
+
+          <div class="field">
+            <label for="city">Місто або формат представлення</label>
+            <input type="text" id="city" placeholder="Наприклад: Кривий Ріг">
+          </div>
+
+          <div class="field">
+            <label for="dream">Мрія або ким хоче стати</label>
+            <input type="text" id="dream" placeholder="Наприклад: дизайнеркою ігор">
+          </div>
+
+          <div class="field field--full">
+            <label for="photo">Фото дитини</label>
+            <input type="file" id="photo" accept="image/*">
+          </div>
+
+          <div class="field field--full">
+            <label for="about">Коротко про дитину</label>
+            <textarea id="about" rows="4" placeholder="Наприклад: Я люблю вивчати нове, створювати цікаві речі та дізнаватися, як працюють сайти, ігри та цифрові інструменти."></textarea>
+          </div>
+
+          <div class="field field--full">
+            <label for="interests">Інтереси та хобі</label>
+            <textarea id="interests" rows="3" placeholder="Наприклад: малювання, Minecraft, комікси, Canva, створення історій"></textarea>
+          </div>
+
+          <div class="field field--full">
+            <label for="skills">Що вже вміє або що любить робити</label>
+            <textarea id="skills" rows="3" placeholder="Наприклад: придумувати героїв, оформлювати слайди, створювати прості візуальні роботи, писати короткі історії"></textarea>
+          </div>
+
+          <div class="field field--full">
+            <label for="projects">Які проєкти або роботи хотіла б створювати</label>
+            <textarea id="projects" rows="3" placeholder="Наприклад: власний сайт, презентації, комікси, цифрові історії, мініігри"></textarea>
+          </div>
+
+          <div class="field">
+            <label for="color">Акцентний колір</label>
+            <input type="color" id="color" value="#ff8a65">
+          </div>
+
+          <div class="field">
+            <label for="strongSide">Сильна сторона</label>
+            <input type="text" id="strongSide" placeholder="Наприклад: творче мислення">
+          </div>
+        </div>
+
+        <div class="actions">
+          <button id="demoBtn" class="btn btn--secondary" type="button">Підставити приклад</button>
+          <button id="generateBtn" class="btn btn--primary" type="button">Створити портфоліо</button>
+        </div>
+
+        <div class="note">
+          Тепер у результаті формується не просто текст, а повноцінна веб-сторінка-портфоліо,
+          яку можна показати батькам, використати як перший сайт або як основу для навчального проєкту.
+        </div>
+      </section>
+
+      <section class="card preview-card">
+        <div class="section-head">
+          <h2>Попередній перегляд</h2>
+        </div>
+
+        <iframe id="previewFrame" title="Попередній перегляд портфоліо"></iframe>
+      </section>
+
+      <section class="card cta-card">
+        <div class="cta-card__content">
+          <div>
+            <div class="cta-card__badge">Безкоштовно</div>
+            <h2>Запишись на перший безкоштовний урок</h2>
+            <p>
+              Дізнайся, що саме можна створювати на заняттях: <br>власні сайти, ігри, портфоліо, анімації, інтерактивні сторінки та інші цифрові проєкти.
+            </p>
+          </div>
+
+          <a href="#" class="cta-card__button">Записатись на перший безкоштовний урок</a>
+        </div>
+      </section>
+
+      <section class="card code-card">
+        <div class="section-head">
+          <h2>Готовий HTML-код</h2>
+          <button id="copyBtn" class="btn btn--small" type="button">Скопіювати код</button>
+        </div>
+
+        <pre id="codeOutput" class="code-output">&lt;!-- Тут з’явиться HTML-код портфоліо --&gt;</pre>
+      </section>
+
+      <section class="card instruction-card">
+        <h2>Завдання для допитливих</h2>
+        <div class="instruction-box">
+          <p><strong>1.</strong> Скопіюйте згенерований код вище.</p>
+          <p>
+            <strong>2.</strong> Перейдіть на сайт
+            <a href="https://onecompiler.com/html" target="_blank" rel="noopener noreferrer">OneCompiler</a>,
+            вставте код у редактор і запустіть проєкт.
+          </p>
+          <p><strong>3.</strong> Спробуйте самостійно змінити заголовок сторінки, текст у блоці “Про мене” або назви пунктів меню.</p>
+          <p><strong>4.</strong> Змініть кольори сторінки або додайте новий блок, наприклад “Мої проєкти” чи “Моя улюблена гра”.</p>
+          <p><strong>5.</strong> Пам’ятайте: після будь-яких змін у коді потрібно знову натискати <strong>RUN</strong>, щоб побачити оновлений результат.</p>
+          <p>
+            Якщо ви хочете навчитися писати код більш професійно, важливо звикати до такого підходу:
+            вносити зміни, перевіряти результат, аналізувати, що змінилося, і поступово покращувати свою сторінку.
+          </p>
+
+          <p class="instruction-cta-message">
+            <strong>Вийшло? Молодець — значить, можна пробувати ще більше!</strong>
+            <br>
+            <strong>Не вийшло? Нічого страшного.</strong> Приходь до нас — і ми покажемо, як зробити це крок за кроком, зрозуміло і красиво.
+          </p>
+
+          <a href="#" class="instruction-cta-button">Записатись на перший безкоштовний урок</a>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
